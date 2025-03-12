@@ -1,0 +1,57 @@
+{
+    "location": {
+        "name": "Cu Chi",
+        "region": "",
+        "country": "Vietnam",
+        "lat": 10.9667,
+        "lon": 106.4667,
+        "tz_id": "Asia/Ho_Chi_Minh",
+        "localtime_epoch": 1741766631,
+        "localtime": "2025-03-12 15:03"
+    },
+    "current": {
+        "last_updated_epoch": 1741766400,
+        "last_updated": "2025-03-12 15:00",
+        "temp_c": 34.1,
+        "temp_f": 93.4,
+        "is_day": 1,
+        "condition": {
+            "text": "Partly cloudy",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+            "code": 1003
+        },
+        "wind_mph": 10.3,
+        "wind_kph": 16.6,
+        "wind_degree": 150,
+        "wind_dir": "SSE",
+        "pressure_mb": 1006.0,
+        "pressure_in": 29.71,
+        "precip_mm": 0.0,
+        "precip_in": 0.0,
+        "humidity": 53,
+        "cloud": 50,
+        "feelslike_c": 35.7,
+        "feelslike_f": 96.2,
+        "windchill_c": 35.6,
+        "windchill_f": 96.0,
+        "heatindex_c": 38.2,
+        "heatindex_f": 100.7,
+        "dewpoint_c": 18.7,
+        "dewpoint_f": 65.7,
+        "vis_km": 10.0,
+        "vis_miles": 6.0,
+        "uv": 2.8,
+        "gust_mph": 12.1,
+        "gust_kph": 19.4,
+        "air_quality": {
+            "co": 1211.75,
+            "no2": 67.71,
+            "o3": 54.0,
+            "so2": 21.46,
+            "pm2_5": 60.495,
+            "pm10": 63.825,
+            "us-epa-index": 3,
+            "gb-defra-index": 8
+        }
+    }
+}
