@@ -1,9 +1,9 @@
 {
     "flowSegmentData": {
         "frc": "FRC1",
-        "currentSpeed": 42,
+        "currentSpeed": 44,
         "freeFlowSpeed": 49,
-        "currentTravelTime": 644,
+        "currentTravelTime": 615,
         "freeFlowTravelTime": 552,
         "confidence": 1,
         "roadClosure": false,

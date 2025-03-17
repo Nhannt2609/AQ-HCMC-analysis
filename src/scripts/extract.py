@@ -4,18 +4,19 @@ import os
 import time
 from dotenv import load_dotenv
 
-load_dotenv()
-WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
-TRAFFIC_API_KEY = os.getenv("TRAFFIC_API_KEY")
-# print(WEATHER_API_KEY)
-# print(TRAFFIC_API_KEY)
-
-with open("districts.json", "r", encoding="utf-8") as f:
-    districts = json.load(f)
-
-os.makedirs("temp_data", exist_ok=True)
-
 def extract_data():
+    load_dotenv()
+    WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+    TRAFFIC_API_KEY = os.getenv("TRAFFIC_API_KEY")
+    # print(WEATHER_API_KEY)
+    # print(TRAFFIC_API_KEY)
+
+    with open("districts.json", "r", encoding="utf-8") as f:
+        districts = json.load(f)
+
+    os.makedirs("temp_data", exist_ok=True)
+    
+    
     for district in districts:
         Q1 = district["name"]
         Q2 = district["state"]

@@ -2,7 +2,6 @@
     {"district": "Quan 1", "name": "Ho Chi Minh City", "state": "Ho Chi Minh City", "lat_lon": "10.782773,106.700035"},
     {"district": "Quan 2", "name": "Quan Hai", "state": "Ho Chi Minh City", "lat_lon": "10.79156,106.74948"},
     {"district": "Quan 3", "name": "Quan Ba", "state": "Ho Chi Minh City", "lat_lon": "10.77494,106.68628"},
-    {"district": "Quan Binh Thanh", "name": "Quan Binh Thanh", "state": "Ho Chi Minh City", "lat_lon": "10.80325,106.69666"},
     {"district": "TP Thu Duc", "name": "Thu Duc", "state": "Ho Chi Minh City", "lat_lon": "10.84863,106.77209"},
     {"district": "TP Di An", "name": "Di An", "state": "Tinh Binh Duong", "lat_lon": "10.90682,106.7694"},
     {"district": "TP Long Khanh", "name": "Long Khanh", "state": "Tinh Dong Nai", "lat_lon": "10.92655,107.24783"}

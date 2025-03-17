@@ -16,7 +16,7 @@ default_args = {
 dag = DAG(
     'etl_pipeline',
     default_args=default_args,
-    schedule_interval='*/30 * * * *',  # Chạy mỗi 30 phút
+    schedule_interval=timedelta(hours=1),
     catchup=False
 )
 
