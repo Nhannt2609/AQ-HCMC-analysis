@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Quan Hai",
+        "state": "Ho Chi Minh City",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                106.74948,
+                10.79156
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-03-17T08:00:00.000Z",
+                "aqius": 131,
+                "mainus": "p2",
+                "aqicn": 66,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-03-17T08:00:00.000Z",
+                "tp": 33,
+                "pr": 1007,
+                "hu": 61,
+                "ws": 1.03,
+                "wd": 0,
+                "ic": "03d"
+            }
+        }
+    }
+}
