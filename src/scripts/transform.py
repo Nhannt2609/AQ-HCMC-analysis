@@ -161,7 +161,7 @@ df_time['year'] = df_time['timestamp'].dt.year
 df_time['month'] = df_time['timestamp'].dt.month
 df_time['week'] = df_time['timestamp'].dt.isocalendar().week
 df_time['day'] = df_time['timestamp'].dt.day
-df_time['hour'] = df_time['timestamp'].dt.hour
+df_time['hour'] = df_time['timestamp'].dt.hour + 7
 df_time['minute'] = df_time['timestamp'].dt.minute
 df_time['day_of_week'] = df_time['timestamp'].dt.day_name()
 
