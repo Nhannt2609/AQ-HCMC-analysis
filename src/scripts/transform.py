@@ -151,7 +151,7 @@ columns_to_drop = [
     'heat_index', 'weather_condition'
 ]
 df_fact.drop(columns=columns_to_drop, axis=1, inplace=True)
-df_fact = df_fact.rename(columns={'timestamp_x' : 'timestamp'})
+df_fact = df_fact.rename(columns={'timestamp_x' : 'timestamp', 'district': 'district_id'})
 df_fact['timestamp'] = pd.to_datetime(df_fact['timestamp'])
 
 # Xử lý data time
@@ -176,6 +176,8 @@ def get_season(month):
         return 'Autumn'
 
 df_time['season'] = df_time['month'].apply(get_season)
+
+print(df_fact.columns)
 
 # Tạo thư mục lưu data đã xử lý
 os.makedirs("processed_data", exist_ok=True)
