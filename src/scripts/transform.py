@@ -137,6 +137,45 @@ df_aqi_traffic = pd.merge(df_aqi, df_traffic, on="district", how="inner")
 df_fact = pd.merge(df_aqi_traffic, df_weather, on="district", how="inner")
 df_fact["fact_id"] = [uuid.uuid4() for _ in range(len(df_fact))]
 
+# Xử lý các field trong DataFrame
+df_traffic.drop("district", axis=1, inplace=True)
+df_weather.drop(columns=['district', 'timestamp'], axis=1, inplace=True)
+
+columns_to_drop = [
+    'frc', 'current_speed', 'free_flow_speed', 'congestion_level', 
+    'current_travel_time', 'free_flow_travel_time', 'confidence', 
+    'delay_time', 'congestion_index', 'traffic_efficiency', 
+    'data_reliability', 'adjusted_congestion', 
+    'timestamp_y', 'temperature', 'pressure', 'humidity', 
+    'wind_speed', 'wind_direction', 'feels_like_temp', 
+    'heat_index', 'weather_condition'
+]
+df_fact.drop(columns=columns_to_drop, axis=1, inplace=True)
+df_fact = df_fact.rename(columns={'timestamp_x' : 'timestamp'})
+df_fact['timestamp'] = pd.to_datetime(df_fact['timestamp'])
+
+# Xử lý data time
+df_time = df_fact[['timestamp']].copy()
+df_time = df_time.drop_duplicates()
+df_time['year'] = df_time['timestamp'].dt.year
+df_time['month'] = df_time['timestamp'].dt.month
+df_time['week'] = df_time['timestamp'].dt.isocalendar().week
+df_time['day'] = df_time['timestamp'].dt.day
+df_time['hour'] = df_time['timestamp'].dt.hour
+df_time['minute'] = df_time['timestamp'].dt.minute
+df_time['day_of_week'] = df_time['timestamp'].dt.day_name()
+
+def get_season(month):
+    if month in [12, 1, 2]:
+        return 'Winter'
+    elif month in [3, 4, 5]:
+        return 'Spring'
+    elif month in [6, 7, 8]:
+        return 'Summer'
+    elif month in [9, 10, 11]:
+        return 'Autumn'
+
+df_time['season'] = df_time['month'].apply(get_season)
 
 # Tạo thư mục lưu data đã xử lý
 os.makedirs("processed_data", exist_ok=True)
@@ -144,6 +183,7 @@ os.makedirs("processed_data", exist_ok=True)
 # Lưu dữ liệu thành CSV
 df_traffic.to_csv("processed_data/traffic_data.csv", index=False, encoding="utf-8")
 df_weather.to_csv("processed_data/weather_data.csv", index=False, encoding="utf-8")
+df_time.to_csv("processed_data/time_data.csv", index=False, encoding="utf-8")
 df_fact.to_csv("processed_data/fact_data.csv", index=False, encoding="utf-8")
 
 print("✅ Dữ liệu đã được xử lý và lưu vào processed_data")

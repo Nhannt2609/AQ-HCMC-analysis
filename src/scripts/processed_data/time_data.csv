@@ -1,0 +1,3 @@
+timestamp,year,month,week,day,hour,minute,day_of_week,season
+2025-03-17 08:00:00+00:00,2025,3,12,17,8,0,Monday,Spring
+2025-03-17 05:00:00+00:00,2025,3,12,17,5,0,Monday,Spring
