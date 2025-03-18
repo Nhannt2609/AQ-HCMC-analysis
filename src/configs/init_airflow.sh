@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Initializing Airflow database..."
-airflow db init
+airflow db migrate
 
 echo "Creating Airflow admin user..."
 airflow users create \
@@ -9,7 +9,7 @@ airflow users create \
     --firstname Admin \
     --lastname User \
     --role Admin \
-    --email admin@example.com \
+    --email ngnhan2609@gmail.com \
     --password admin
 
 echo "Starting Airflow Scheduler & Webserver..."

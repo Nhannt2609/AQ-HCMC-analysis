@@ -1,12 +1,41 @@
-version: '3.8'
+version: '3'
 services:
-  airflow:
-    image: apache/airflow:latest
-    container_name: airflow
-    restart: always
-    env_file:
-      - .env
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: nhannt
+      POSTGRES_DB: airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+
+  airflow-init:
+    image: apache/airflow:2.7.3
+    container_name: airflow-init
+    entrypoint: ["/bin/bash", "-c", "airflow db init"]
+    depends_on:
+      - postgres
+    environment:
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://postgres:nhannt@postgres:5432/airflow
+
+  scheduler:
+    image: apache/airflow:2.7.3
+    container_name: airflow-scheduler
+    environment:
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://postgres:nhannt@postgres:5432/airflow
+    command: airflow scheduler
+    depends_on:
+      - postgres
+      - airflow-init
     volumes:
       - ./dags:/opt/airflow/dags
-    ports:
-      - "8080:8080"
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    env_file:
+      - .env
+
+
+volumes:
+  postgres-db-volume:

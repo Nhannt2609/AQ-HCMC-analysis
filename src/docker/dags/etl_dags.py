@@ -16,8 +16,9 @@ default_args = {
 dag = DAG(
     'etl_pipeline',
     default_args=default_args,
-    schedule_interval=timedelta(hours=1),
-    catchup=False
+    schedule="0 * * * *",
+    catchup=False,
+    max_active_runs=1
 )
 
 extract_task = PythonOperator(
