@@ -16,7 +16,7 @@ default_args = {
 dag = DAG(
     'etl_pipeline',
     default_args=default_args,
-    schedule="0 * * * *",
+    schedule="10 * * * *",
     catchup=False,
     max_active_runs=1
 )

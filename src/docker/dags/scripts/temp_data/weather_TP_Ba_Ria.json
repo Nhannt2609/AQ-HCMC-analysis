@@ -1,32 +1,32 @@
 {
     "status": "success",
     "data": {
-        "city": "Ho Chi Minh City",
-        "state": "Ho Chi Minh City",
+        "city": "Thanh Pho Ba Ria",
+        "state": "Tinh Ba Ria-Vung Tau",
         "country": "Vietnam",
         "location": {
             "type": "Point",
             "coordinates": [
-                106.700035,
-                10.782773
+                107.16841,
+                10.49629
             ]
         },
         "current": {
             "pollution": {
                 "ts": "2025-03-18T16:00:00.000Z",
-                "aqius": 82,
+                "aqius": 68,
                 "mainus": "p2",
-                "aqicn": 37,
-                "maincn": "p2"
+                "aqicn": 32,
+                "maincn": "p1"
             },
             "weather": {
                 "ts": "2025-03-18T16:00:00.000Z",
-                "tp": 28,
+                "tp": 25,
                 "pr": 1012,
-                "hu": 70,
-                "ws": 1.54,
-                "wd": 300,
-                "ic": "02n"
+                "hu": 76,
+                "ws": 4.05,
+                "wd": 78,
+                "ic": "04n"
             }
         }
     }

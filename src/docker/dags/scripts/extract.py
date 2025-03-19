@@ -11,7 +11,13 @@ def extract_data():
     # print(WEATHER_API_KEY)
     # print(TRAFFIC_API_KEY)
 
-    with open("districts.json", "r", encoding="utf-8") as f:
+    # Lấy đường dẫn tuyệt đối của thư mục chứa script
+    script_dir = os.path.dirname(os.path.abspath(__file__))  
+    file_path = os.path.join(script_dir, "districts.json")
+
+    print(f"Loading file from: {file_path}")  # Debug xem đường dẫn có đúng không
+
+    with open(file_path, "r", encoding="utf-8") as f:
         districts = json.load(f)
 
     os.makedirs("temp_data", exist_ok=True)

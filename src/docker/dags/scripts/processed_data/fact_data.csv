@@ -1,7 +1,9 @@
 location_id,aqi_us,main_us,aqi_cn,main_cn,timestamp,aqi_us_category,aqi_cn_category,aqi_avg,main_pollutant,severe_pollution,traffic_id,weather_id,fact_id
-Quan 1,71,PM2.5,29,PM2.5,2025-03-17 17:00:00+00:00,Moderate,Good,50.0,PM2.5,No,7d9690fd-e7c8-4c69-9e25-d8d3115d3c6f,6a6396c5-0781-4a39-9a77-327c5451ffe2,d6b2796f-b80b-45f4-b7de-ea14ef47bb39
-Quan 2,64,PM2.5,23,PM2.5,2025-03-17 17:00:00+00:00,Moderate,Good,43.5,PM2.5,No,f1addee4-5353-4ae3-ba99-9d3bb03f753a,c1c3a260-90f0-4560-a5be-afcd6f5ac0f3,d8c9ce46-4c08-4e25-88aa-fc221ca2220c
-Quan 3,109,PM10,115,PM10,2025-03-17 17:00:00+00:00,Unhealthy for Sensitive Groups,Unhealthy for Sensitive Groups,112.0,PM10,No,73dc8f3d-042e-445c-9ccc-746f8a2ad0f1,3b3d5a77-2734-4485-97a3-bf0eeea75a2d,3ccd7800-64dd-4936-8fe9-6302d2547a67
-TP Di An,75,PM2.5,31,PM2.5,2025-03-17 17:00:00+00:00,Moderate,Good,53.0,PM2.5,No,0e036047-b3b5-41bf-bd11-da29556e123c,15b62659-b7a5-440f-8939-68d20255cdad,8101f5ff-fc0e-4cf9-9343-760bc5497a65
-TP Long Khanh,62,PM2.5,21,PM2.5,2025-03-17 17:00:00+00:00,Moderate,Good,41.5,PM2.5,No,d30e2fe2-27f3-43b8-a53c-4eca80ed72c4,8499e1b9-261b-4983-b23c-6093e7f0aa2a,2522dd67-1576-434b-b5b8-ef3e66547b1c
-TP Thu Duc,69,PM2.5,27,PM2.5,2025-03-17 17:00:00+00:00,Moderate,Good,48.0,PM2.5,No,31134842-09d6-49f9-b730-1fc4e3bbece7,abfb5f74-41de-42a6-abe2-c73c3228e2b1,e6e9a161-73d2-433c-b5c3-c5869e36c149
+Quan 1,82,PM2.5,37,PM2.5,2025-03-18 16:00:00+00:00,Moderate,Good,59.5,PM2.5,No,a71ae10f-9e0a-4489-b0f2-cf5644062528,7fb9fc04-ff66-4403-b6de-9169a893595c,3cfa9331-1ea3-4b98-b2cf-84ccaa5c93fc
+Quan 2,80,PM2.5,35,PM2.5,2025-03-18 16:00:00+00:00,Moderate,Good,57.5,PM2.5,No,0547decd-0f50-4e90-b6c6-4f7104324bb7,87b30b3b-e12d-428c-a1f9-1ac86abedffd,9dbf42a7-64c2-4eab-9926-7549f0ac5c5a
+Quan 3,109,PM10,115,PM10,2025-03-18 16:00:00+00:00,Unhealthy for Sensitive Groups,Unhealthy for Sensitive Groups,112.0,PM10,No,35904213-3c20-42a2-8df6-5e551b8308ca,2b8a0039-761b-48d7-9c4d-7f90180b16dc,c22a852a-e681-44c9-83cc-7ac7e86c2d90
+TP Ba Ria,68,PM2.5,32,PM10,2025-03-18 16:00:00+00:00,Moderate,Good,50.0,PM2.5,No,585f3f51-58f9-4aa2-91ee-986d76c71d78,f3f43128-a3bb-4a20-9805-7a65fe12dd6f,baea2e00-93b3-4f4e-b5a7-dba65b0cbbe7
+TP Di An,79,PM2.5,34,PM2.5,2025-03-18 16:00:00+00:00,Moderate,Good,56.5,PM2.5,No,90afc0df-7d5b-419c-832c-53e352e726c5,a4a68b2d-72fc-4d65-ba3b-432b4dd113c0,4e9a2bec-2f68-486e-8ac5-6056930b0c58
+TP Long Khanh,82,PM2.5,37,PM2.5,2025-03-18 16:00:00+00:00,Moderate,Good,59.5,PM2.5,No,af2f6bc4-3c1f-4ebb-aacb-9775a8274fbf,85df8636-eb4e-427f-90df-af201aa22f8c,fe127afb-fddd-41be-9b10-e590db932c40
+TP Thu Duc,75,PM2.5,31,PM2.5,2025-03-18 16:00:00+00:00,Moderate,Good,53.0,PM2.5,No,cac4daee-d301-4709-a95b-6d1de932b033,19e4e40c-6fe5-48bf-9c48-41970f82b7b4,a3b9ceed-8fd5-4270-b0e6-ad2ccdb2b633
+TT Phu My,80,PM2.5,67,PM10,2025-03-18 16:00:00+00:00,Moderate,Moderate,73.5,PM2.5,No,6157ce36-e7ef-4785-a214-ac1297288f2f,124669bc-68e6-4f38-96f1-98ce0d37517d,be1f60a7-7505-49a4-a5eb-b4140958e93d
