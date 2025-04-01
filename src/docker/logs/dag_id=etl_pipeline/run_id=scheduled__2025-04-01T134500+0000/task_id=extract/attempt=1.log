@@ -1,0 +1,109 @@
+[2025-04-01T14:45:07.928+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.extract scheduled__2025-04-01T13:45:00+00:00 [queued]>
+[2025-04-01T14:45:07.933+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.extract scheduled__2025-04-01T13:45:00+00:00 [queued]>
+[2025-04-01T14:45:07.933+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-04-01T14:45:07.942+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2025-04-01 13:45:00+00:00
+[2025-04-01T14:45:07.948+0000] {standard_task_runner.py:57} INFO - Started process 471 to run task
+[2025-04-01T14:45:07.950+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_pipeline', 'extract', 'scheduled__2025-04-01T13:45:00+00:00', '--job-id', '226', '--raw', '--subdir', 'DAGS_FOLDER/etl_dags.py', '--cfg-path', '/tmp/tmpwikbyj5y']
+[2025-04-01T14:45:07.952+0000] {standard_task_runner.py:85} INFO - Job 226: Subtask extract
+[2025-04-01T14:45:07.965+0000] {logging_mixin.py:154} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-04-01T14:45:07.993+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_pipeline.extract scheduled__2025-04-01T13:45:00+00:00 [running]> on host f263ca9a5772
+[2025-04-01T14:45:08.049+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-04-01T13:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-01T13:45:00+00:00'
+[2025-04-01T14:47:13.609+0000] {logging_mixin.py:154} INFO - 🌟 Extract city list completely
+[2025-04-01T14:47:14.253+0000] {logging_mixin.py:154} INFO - 🗾 District: Ho Chi Minh City  - State: Ho Chi Minh City
+[2025-04-01T14:47:14.253+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:47:14.253100+00:00
+[2025-04-01T14:47:14.254+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:47:14.254+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:47:30.877+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Ho Chi Minh City, Ho Chi Minh City
+[2025-04-01T14:47:31.812+0000] {logging_mixin.py:154} INFO - 🗾 District: Quan Ba  - State: Ho Chi Minh City
+[2025-04-01T14:47:31.813+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:47:31.812385+00:00
+[2025-04-01T14:47:31.813+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:47:31.813+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:47:48.951+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Quan Ba, Ho Chi Minh City
+[2025-04-01T14:47:49.478+0000] {logging_mixin.py:154} INFO - 🗾 District: Quan Phu Nhuan  - State: Ho Chi Minh City
+[2025-04-01T14:47:49.478+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:47:49.478177+00:00
+[2025-04-01T14:47:49.479+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:47:49.479+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T13:00:00.000Z
+[2025-04-01T14:48:06.072+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Quan Phu Nhuan, Ho Chi Minh City
+[2025-04-01T14:48:06.494+0000] {logging_mixin.py:154} INFO - 🗾 District: Thu Duc  - State: Ho Chi Minh City
+[2025-04-01T14:48:06.495+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:48:06.494889+00:00
+[2025-04-01T14:48:06.495+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:48:06.496+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:48:22.977+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Thu Duc, Ho Chi Minh City
+[2025-04-01T14:48:23.544+0000] {logging_mixin.py:154} INFO - 🗾 District: Da Nang  - State: Da Nang
+[2025-04-01T14:48:23.545+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:48:23.544466+00:00
+[2025-04-01T14:48:23.546+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:48:23.546+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:48:40.201+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Da Nang, Da Nang
+[2025-04-01T14:48:40.716+0000] {logging_mixin.py:154} INFO - 🗾 District: Cau Dien  - State: Hanoi
+[2025-04-01T14:48:40.716+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:48:40.716037+00:00
+[2025-04-01T14:48:40.717+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:48:40.717+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:48:57.419+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Cau Dien, Hanoi
+[2025-04-01T14:48:58.009+0000] {logging_mixin.py:154} INFO - 🗾 District: Ha Dong  - State: Hanoi
+[2025-04-01T14:48:58.010+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:48:58.009569+00:00
+[2025-04-01T14:48:58.010+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:48:58.011+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:49:15.699+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Ha Dong, Hanoi
+[2025-04-01T14:49:16.044+0000] {logging_mixin.py:154} INFO - 🗾 District: Hai BaTrung  - State: Hanoi
+[2025-04-01T14:49:16.045+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:49:16.044319+00:00
+[2025-04-01T14:49:16.045+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:49:16.046+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:49:32.150+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Hai BaTrung, Hanoi
+[2025-04-01T14:49:32.640+0000] {logging_mixin.py:154} INFO - 🗾 District: Hanoi  - State: Hanoi
+[2025-04-01T14:49:32.641+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:49:32.640358+00:00
+[2025-04-01T14:49:32.641+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:49:32.641+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:49:49.234+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Hanoi, Hanoi
+[2025-04-01T14:49:49.550+0000] {logging_mixin.py:154} INFO - 🗾 District: Hoan Kiem  - State: Hanoi
+[2025-04-01T14:49:49.551+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:49:49.550395+00:00
+[2025-04-01T14:49:49.551+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:49:49.551+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:50:05.835+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Hoan Kiem, Hanoi
+[2025-04-01T14:50:06.229+0000] {logging_mixin.py:154} INFO - 🗾 District: Phường Phú Thượng  - State: Hanoi
+[2025-04-01T14:50:06.230+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:50:06.229556+00:00
+[2025-04-01T14:50:06.230+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:50:06.231+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:50:22.312+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Phường Phú Thượng, Hanoi
+[2025-04-01T14:50:22.615+0000] {logging_mixin.py:154} INFO - 🗾 District: Tay Ho  - State: Hanoi
+[2025-04-01T14:50:22.616+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:50:22.615894+00:00
+[2025-04-01T14:50:22.617+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:50:22.617+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:50:38.749+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Tay Ho, Hanoi
+[2025-04-01T14:50:39.211+0000] {logging_mixin.py:154} INFO - 🗾 District: Thach That  - State: Hanoi
+[2025-04-01T14:50:39.211+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:50:39.211190+00:00
+[2025-04-01T14:50:39.212+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:50:39.212+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:50:55.476+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Thach That, Hanoi
+[2025-04-01T14:50:55.952+0000] {logging_mixin.py:154} INFO - 🗾 District: Di An  - State: Tinh Binh Duong
+[2025-04-01T14:50:55.952+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:50:55.952138+00:00
+[2025-04-01T14:50:55.953+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:50:55.953+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:51:12.168+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Di An, Tinh Binh Duong
+[2025-04-01T14:51:12.677+0000] {logging_mixin.py:154} INFO - 🗾 District: Long Khanh  - State: Tinh Dong Nai
+[2025-04-01T14:51:12.678+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:51:12.677025+00:00
+[2025-04-01T14:51:12.678+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:51:12.678+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:51:29.265+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Long Khanh, Tinh Dong Nai
+[2025-04-01T14:51:29.894+0000] {logging_mixin.py:154} INFO - 🗾 District: Haiphong  - State: Thanh Pho Hai Phong
+[2025-04-01T14:51:29.895+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:51:29.894453+00:00
+[2025-04-01T14:51:29.895+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:51:29.896+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:51:46.405+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Haiphong, Thanh Pho Hai Phong
+[2025-04-01T14:51:46.948+0000] {logging_mixin.py:154} INFO - 🗾 District: Ha Tinh  - State: Tinh Ha Tinh
+[2025-04-01T14:51:46.949+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:51:46.948875+00:00
+[2025-04-01T14:51:46.949+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:51:46.950+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:52:03.462+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Ha Tinh, Tinh Ha Tinh
+[2025-04-01T14:52:03.975+0000] {logging_mixin.py:154} INFO - 🗾 District: Con Son  - State: Tinh Ba Ria-Vung Tau
+[2025-04-01T14:52:03.976+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:52:03.975545+00:00
+[2025-04-01T14:52:03.976+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:52:03.976+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:52:06.934+0000] {logging_mixin.py:154} INFO - 🗾 District: Vung Tau  - State: Tinh Ba Ria-Vung Tau
+[2025-04-01T14:52:06.934+0000] {logging_mixin.py:154} INFO - ⌚ Time now: 2025-04-01 14:52:06.934466+00:00
+[2025-04-01T14:52:06.935+0000] {logging_mixin.py:154} INFO - ⌛ Time API weather: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:52:06.935+0000] {logging_mixin.py:154} INFO - ⌛ Time API pollution: 2025-04-01T14:00:00.000Z
+[2025-04-01T14:52:23.055+0000] {logging_mixin.py:154} INFO - ✅ Saved data for Vung Tau, Tinh Ba Ria-Vung Tau
+[2025-04-01T14:52:23.056+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-04-01T14:52:23.064+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=extract, execution_date=20250401T134500, start_date=20250401T144507, end_date=20250401T145223
+[2025-04-01T14:52:23.120+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-04-01T14:52:23.137+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,22 @@
+[2025-03-19T07:04:07.609+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.extract manual__2025-03-19T06:53:09+00:00 [queued]>
+[2025-03-19T07:04:07.615+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.extract manual__2025-03-19T06:53:09+00:00 [queued]>
+[2025-03-19T07:04:07.615+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-03-19T07:04:07.624+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2025-03-19 06:53:09+00:00
+[2025-03-19T07:04:07.627+0000] {standard_task_runner.py:57} INFO - Started process 114 to run task
+[2025-03-19T07:04:07.629+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_pipeline', 'extract', 'manual__2025-03-19T06:53:09+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/etl_dags.py', '--cfg-path', '/tmp/tmpjtkx7h_8']
+[2025-03-19T07:04:07.645+0000] {standard_task_runner.py:85} INFO - Job 49: Subtask extract
+[2025-03-19T07:04:07.656+0000] {logging_mixin.py:154} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-19T07:04:07.680+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_pipeline.extract manual__2025-03-19T06:53:09+00:00 [running]> on host 7b70899a1576
+[2025-03-19T07:04:07.735+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-03-19T06:53:09+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-19T06:53:09+00:00'
+[2025-03-19T07:04:24.074+0000] {logging_mixin.py:154} INFO - Saved data for Quan 1
+[2025-03-19T07:04:40.088+0000] {logging_mixin.py:154} INFO - Saved data for Quan 2
+[2025-03-19T07:04:56.401+0000] {logging_mixin.py:154} INFO - Saved data for Quan 3
+[2025-03-19T07:05:12.436+0000] {logging_mixin.py:154} INFO - Saved data for TP Thu Duc
+[2025-03-19T07:05:28.968+0000] {logging_mixin.py:154} INFO - Saved data for TP Di An
+[2025-03-19T07:05:44.967+0000] {logging_mixin.py:154} INFO - Saved data for TP Long Khanh
+[2025-03-19T07:06:01.028+0000] {logging_mixin.py:154} INFO - Saved data for TT Phu My
+[2025-03-19T07:06:17.284+0000] {logging_mixin.py:154} INFO - Saved data for TP Ba Ria
+[2025-03-19T07:06:17.285+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-03-19T07:06:17.291+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=extract, execution_date=20250319T065309, start_date=20250319T070407, end_date=20250319T070617
+[2025-03-19T07:06:17.320+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-03-19T07:06:17.336+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

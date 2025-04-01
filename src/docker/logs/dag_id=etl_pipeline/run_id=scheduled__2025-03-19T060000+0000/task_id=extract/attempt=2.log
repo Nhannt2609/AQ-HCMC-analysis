@@ -1,0 +1,31 @@
+[2025-03-19T07:06:50.778+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.extract scheduled__2025-03-19T06:00:00+00:00 [queued]>
+[2025-03-19T07:06:50.783+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.extract scheduled__2025-03-19T06:00:00+00:00 [queued]>
+[2025-03-19T07:06:50.784+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-03-19T07:06:50.792+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2025-03-19 06:00:00+00:00
+[2025-03-19T07:06:50.795+0000] {standard_task_runner.py:57} INFO - Started process 57 to run task
+[2025-03-19T07:06:50.797+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'etl_pipeline', 'extract', 'scheduled__2025-03-19T06:00:00+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/etl_dags.py', '--cfg-path', '/tmp/tmpzak0p_wk']
+[2025-03-19T07:06:50.799+0000] {standard_task_runner.py:85} INFO - Job 55: Subtask extract
+[2025-03-19T07:06:50.809+0000] {logging_mixin.py:154} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-03-19T07:06:50.832+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_pipeline.extract scheduled__2025-03-19T06:00:00+00:00 [running]> on host 7b70899a1576
+[2025-03-19T07:06:50.876+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-03-19T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-19T06:00:00+00:00'
+[2025-03-19T07:06:50.878+0000] {logging_mixin.py:154} INFO - Loading file from: /opt/airflow/dags/scripts/districts.json
+[2025-03-19T07:07:05.904+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-03-19T07:07:05.905+0000] {process_utils.py:131} INFO - Sending 15 to group 57. PIDs of all processes in the group: [57]
+[2025-03-19T07:07:05.906+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 57
+[2025-03-19T07:07:05.906+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-03-19T07:07:05.913+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/scripts/extract.py", line 36, in extract_data
+    time.sleep(15)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-03-19T07:07:05.920+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_pipeline, task_id=extract, execution_date=20250319T060000, start_date=20250319T070650, end_date=20250319T070705
+[2025-03-19T07:07:05.928+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 55 for task extract (Task received SIGTERM signal; 57)
+[2025-03-19T07:07:05.933+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=57, status='terminated', exitcode=1, started='07:06:50') (57) terminated with exit code 1
+[2025-03-19T07:07:05.934+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-03-19T07:07:05.947+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
