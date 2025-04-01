@@ -170,5 +170,4 @@ cython_debug/
 .pypirc
 
 
-# Data
-src/docker/logs/
+src/docker/logs/scheduler/latest

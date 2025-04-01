@@ -3,11 +3,11 @@ services:
   postgres:
     image: postgres:13
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: nhannt
-      POSTGRES_DB: airflow
+      POSTGRES_USER: avnadmin
+      POSTGRES_PASSWORD: AVNS_R6jVHcyMIAnxtY4_ZhX
+      POSTGRES_DB: defaultdb
     ports:
-      - "5432:5432"
+      - "25979:5432"
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
 
@@ -18,13 +18,13 @@ services:
     depends_on:
       - postgres
     environment:
-      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://postgres:nhannt@postgres:5432/airflow
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgres://avnadmin:AVNS_R6jVHcyMIAnxtY4_ZhX@pg-31abd0c3-ngnhan2609-aaab.k.aivencloud.com:25979/defaultdb
 
   scheduler:
     image: apache/airflow:2.7.3
     container_name: airflow-scheduler
     environment:
-      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://postgres:nhannt@postgres:5432/airflow
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgres://avnadmin:AVNS_R6jVHcyMIAnxtY4_ZhX@pg-31abd0c3-ngnhan2609-aaab.k.aivencloud.com:25979/defaultdb
     command: airflow scheduler
     depends_on:
       - postgres
