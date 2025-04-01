@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Ha Tinh",
+        "state": "Tinh Ha Tinh",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.90569,
+                18.34282
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 93,
+                "mainus": "p2",
+                "aqicn": 45,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T11:00:00.000Z",
+                "tp": 17,
+                "pr": 1016,
+                "hu": 82,
+                "ws": 2.13,
+                "wd": 93,
+                "ic": "04d"
+            }
+        }
+    }
+}

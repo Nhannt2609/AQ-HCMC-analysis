@@ -34,6 +34,7 @@ services:
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
       - ./dags/scripts/districts.json:/opt/airflow/districts.json
+      - ./dags/scripts/last_update.json:/opt/airflow/last_update.json
     env_file:
       - .env
 

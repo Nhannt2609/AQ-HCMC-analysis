@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Da Nang",
+        "state": "Da Nang",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                108.207097,
+                16.048587
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 47,
+                "mainus": "p2",
+                "aqicn": 12,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T11:00:00.000Z",
+                "tp": 20,
+                "pr": 1015,
+                "hu": 78,
+                "ws": 6.17,
+                "wd": 10,
+                "ic": "02n"
+            }
+        }
+    }
+}

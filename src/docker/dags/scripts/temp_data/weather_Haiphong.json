@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Haiphong",
+        "state": "Thanh Pho Hai Phong",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                106.68345,
+                20.86481
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 107,
+                "mainus": "p2",
+                "aqicn": 54,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T09:00:00.000Z",
+                "tp": 24,
+                "pr": 1015,
+                "hu": 31,
+                "ws": 3.6,
+                "wd": 290,
+                "ic": "01d"
+            }
+        }
+    }
+}

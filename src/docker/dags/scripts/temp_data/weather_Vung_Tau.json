@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Vung Tau",
+        "state": "Tinh Ba Ria-Vung Tau",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                107.08426,
+                10.34599
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 22,
+                "mainus": "p2",
+                "aqicn": 6,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T09:00:00.000Z",
+                "tp": 29,
+                "pr": 1007,
+                "hu": 77,
+                "ws": 8.21,
+                "wd": 108,
+                "ic": "04d"
+            }
+        }
+    }
+}

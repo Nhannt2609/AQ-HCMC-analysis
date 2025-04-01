@@ -2,7 +2,12 @@ import os
 import json
 import pandas as pd
 import uuid
-from datetime import datetime
+from unidecode import unidecode
+from datetime import datetime, timezone
+import shutil
+
+def normalize_state_name(state_name):
+    return unidecode(state_name)
 
 def categorize_aqi(aqi):
     if aqi <= 50:
@@ -39,10 +44,15 @@ def transform_data():
     weather_files = [f for f in os.listdir("temp_data") if f.startswith("weather_") and f.endswith(".json")]
     traffic_files = [f for f in os.listdir("temp_data") if f.startswith("traffic_") and f.endswith(".json")]
 
+    if os.path.exists("processed_data"):
+        shutil.rmtree("processed_data")
+   
+    
     # Tạo danh sách chứa dữ liệu
     weather_data = []
     traffic_data = []
     aqi_data = []
+    location_data = []
 
     # Đọc dữ liệu giao thông
     for file in traffic_files:
@@ -79,12 +89,26 @@ def transform_data():
         with open(f"temp_data/{file}", "r", encoding="utf-8") as f:
             data = json.load(f)
             
+            location_id = data["data"]["city"]
+            latitude = float(data["data"]["location"]["coordinates"][1])
+            longitude = float(data["data"]["location"]["coordinates"][0])
+            state = data["data"]["state"]
+            
+            location_data.append({
+                "location_id": normalize_state_name(location_id),
+                "latitude": latitude,
+                "longitude": longitude,
+                "state": state,
+                "country": "Vietnam"
+            })
+            
+                  
             if data["status"] == "success":
                 aqi_us = data["data"]["current"]["pollution"]["aqius"]
                 aqi_cn = data["data"]["current"]["pollution"]["aqicn"]
                 main_us = "PM2.5" if data["data"]["current"]["pollution"]["mainus"] == "p2" else "PM10"
                 main_cn = "PM2.5" if data["data"]["current"]["pollution"]["maincn"] == "p2" else "PM10"
-                timestamp = data["data"]["current"]["pollution"]["ts"]
+                timestamp = pd.Timestamp.now(tz='UTC').replace(minute=0, second=0, microsecond=0)
 
                 aqi_data.append({
                     "district": file.replace("weather_", "").replace(".json", "").replace("_", " "),
@@ -92,8 +116,7 @@ def transform_data():
                     "main_us": main_us,
                     "aqi_cn": aqi_cn,
                     "main_cn": main_cn,
-                    "timestamp": timestamp,
-
+                    "timestamp": timestamp.tz_convert('Asia/Bangkok'),
                     "aqi_us_category": categorize_aqi(aqi_us),
                     "aqi_cn_category": categorize_aqi(aqi_cn),
                     "aqi_avg": (aqi_us + aqi_cn) / 2,
@@ -106,7 +129,7 @@ def transform_data():
                 humidity = data["data"]["current"]["weather"]["hu"]
                 wind_speed = data["data"]["current"]["weather"]["ws"]
                 wind_direction = data["data"]["current"]["weather"]["wd"]
-                timestamp = data["data"]["current"]["pollution"]["ts"]
+                timestamp = data["data"]["current"]["weather"]["ts"] if data["data"]["current"]["weather"]["ts"] > data["data"]["current"]["pollution"]["ts"] else data["data"]["current"]["pollution"]["ts"]
                 
                 weather_data.append({
                     "district": file.replace("weather_", "").replace(".json", "").replace("_", " "),
@@ -128,6 +151,7 @@ def transform_data():
     df_weather = pd.DataFrame(weather_data)
     df_aqi = pd.DataFrame(aqi_data)
     df_traffic = pd.DataFrame(traffic_data)
+    df_location = pd.DataFrame(location_data)
 
     # Chuyển DataFrame thành csv theo star schema đã thiết kế
     # Tạo PK cho các bảng dimension
@@ -191,6 +215,7 @@ def transform_data():
     df_weather.to_csv("processed_data/weather_data.csv", index=False, encoding="utf-8")
     df_time.to_csv("processed_data/time_data.csv", index=False, encoding="utf-8")
     df_fact.to_csv("processed_data/fact_data.csv", index=False, encoding="utf-8")
+    df_location.to_csv("processed_data/location_data.csv", index=False, encoding="utf-8")
 
     print("✅ Dữ liệu đã được xử lý và lưu vào processed_data")
     

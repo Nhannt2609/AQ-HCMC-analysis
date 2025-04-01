@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Hoan Kiem",
+        "state": "Hanoi",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.892763,
+                21.022573
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 153,
+                "mainus": "p2",
+                "aqicn": 80,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T11:00:00.000Z",
+                "tp": 22,
+                "pr": 1015,
+                "hu": 48,
+                "ws": 0.97,
+                "wd": 118,
+                "ic": "02d"
+            }
+        }
+    }
+}

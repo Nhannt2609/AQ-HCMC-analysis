@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Thach That",
+        "state": "Hanoi",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.529948,
+                21.014693
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 127,
+                "mainus": "p2",
+                "aqicn": 64,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T11:00:00.000Z",
+                "tp": 22,
+                "pr": 1015,
+                "hu": 48,
+                "ws": 2.23,
+                "wd": 95,
+                "ic": "02d"
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Hanoi",
+        "state": "Hanoi",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.81881,
+                21.021938
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 154,
+                "mainus": "p2",
+                "aqicn": 81,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T11:00:00.000Z",
+                "tp": 21,
+                "pr": 1015,
+                "hu": 48,
+                "ws": 1.11,
+                "wd": 99,
+                "ic": "02d"
+            }
+        }
+    }
+}

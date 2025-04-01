@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Quan Phu Nhuan",
+        "state": "Ho Chi Minh City",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                106.6763,
+                10.79475
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T08:00:00.000Z",
+                "aqius": 151,
+                "mainus": "p2",
+                "aqicn": 76,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T11:00:00.000Z",
+                "tp": 27,
+                "pr": 1008,
+                "hu": 74,
+                "ws": 1.03,
+                "wd": 0,
+                "ic": "03d"
+            }
+        }
+    }
+}

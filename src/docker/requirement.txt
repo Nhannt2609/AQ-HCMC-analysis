@@ -2,5 +2,6 @@ apache-airflow==2.7.3
 apache-airflow-providers-postgres
 apache-airflow-providers-http
 pandas
+unidecode
 requests
 psycopg2-binary

@@ -1,6 +1,6 @@
 import psycopg2
 import csv
-import json
+import threading
 import os
 from uuid import UUID
 from dotenv import load_dotenv
@@ -43,20 +43,20 @@ def load_data_time():
             """, (timestamp,year,month,week,day,hour,minute,day_of_week,season))
             
 def load_data_location():
-    with open("./districts.json", "r", encoding="utf-8") as file:
-        data = json.load(file)
+    with open("./processed_data/location_data.csv", "r", encoding="utf-8") as file:
+        reader = csv.reader(file)
+        next(reader)
 
-        for row in data:
-            lat, lon = row["lat_lon"].split(",")
+        for row in reader:
             cursor.execute("""
                 INSERT INTO dim_location (location_id, latitude, longitude, state, country)
                 VALUES (%s, %s, %s, %s, %s) ON CONFLICT (location_id) DO NOTHING;
             """, (
-                row["district"],
-                float(lat),
-                float(lon),
-                row["state"],
-                "Vietnam"
+                row[0],
+                row[1],
+                row[2],
+                row[3],
+                row[4]
             ))
             
 def load_data_traffic():        
@@ -140,10 +140,22 @@ def load_data_aqi():
 
 def load_data():
        
-    load_data_time()
-    load_data_location()
-    load_data_traffic()
-    load_data_weather()
+    threads = []
+    functions = [load_data_time, load_data_location, load_data_traffic, load_data_weather]
+
+    # Chạy 4 hàm đầu bằng threading
+    for func in functions:
+        thread = threading.Thread(target=func)
+        thread.start()
+        threads.append(thread)
+
+    # Chờ tất cả các thread hoàn thành
+    for thread in threads:
+        thread.join()
+
+    print("4 nguồn dữ liệu đã load xong, bắt đầu load AQI...")
+
+    # Chạy load_data_aqi sau khi 4 cái trên xong
     load_data_aqi()
 
     print("Load hoàn tất ❤️")

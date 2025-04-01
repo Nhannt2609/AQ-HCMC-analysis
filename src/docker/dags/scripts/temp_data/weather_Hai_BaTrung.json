@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Hai BaTrung",
+        "state": "Hanoi",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.84772,
+                21.01341
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 91,
+                "mainus": "p2",
+                "aqicn": 44,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T09:00:00.000Z",
+                "tp": 23,
+                "pr": 1015,
+                "hu": 42,
+                "ws": 1.6,
+                "wd": 49,
+                "ic": "02d"
+            }
+        }
+    }
+}

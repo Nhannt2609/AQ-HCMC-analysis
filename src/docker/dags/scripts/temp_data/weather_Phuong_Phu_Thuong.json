@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Ph\u01b0\u1eddng Ph\u00fa Th\u01b0\u1ee3ng",
+        "state": "Hanoi",
+        "country": "Vietnam",
+        "location": {
+            "coordinates": [
+                105.80535,
+                21.08511
+            ],
+            "type": "Point"
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 154,
+                "mainus": "p2",
+                "aqicn": 81,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T11:00:00.000Z",
+                "tp": 22,
+                "pr": 1015,
+                "hu": 53,
+                "ws": 3.09,
+                "wd": 260,
+                "ic": "01d"
+            }
+        }
+    }
+}

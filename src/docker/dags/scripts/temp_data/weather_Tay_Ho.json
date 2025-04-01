@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": {
+        "city": "Tay Ho",
+        "state": "Hanoi",
+        "country": "Vietnam",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.81053,
+                21.06895
+            ]
+        },
+        "current": {
+            "pollution": {
+                "ts": "2025-04-01T10:00:00.000Z",
+                "aqius": 142,
+                "mainus": "p2",
+                "aqicn": 71,
+                "maincn": "p2"
+            },
+            "weather": {
+                "ts": "2025-04-01T11:00:00.000Z",
+                "tp": 22,
+                "pr": 1015,
+                "hu": 53,
+                "ws": 3.09,
+                "wd": 260,
+                "ic": "01d"
+            }
+        }
+    }
+}
