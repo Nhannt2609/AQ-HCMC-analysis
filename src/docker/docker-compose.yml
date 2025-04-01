@@ -18,13 +18,13 @@ services:
     depends_on:
       - postgres
     environment:
-      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgres://avnadmin:AVNS_R6jVHcyMIAnxtY4_ZhX@pg-31abd0c3-ngnhan2609-aaab.k.aivencloud.com:25979/defaultdb
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql://avnadmin:AVNS_R6jVHcyMIAnxtY4_ZhX@pg-31abd0c3-ngnhan2609-aaab.k.aivencloud.com:25979/defaultdb
 
   scheduler:
     image: apache/airflow:2.7.3
     container_name: airflow-scheduler
     environment:
-      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgres://avnadmin:AVNS_R6jVHcyMIAnxtY4_ZhX@pg-31abd0c3-ngnhan2609-aaab.k.aivencloud.com:25979/defaultdb
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql://avnadmin:AVNS_R6jVHcyMIAnxtY4_ZhX@pg-31abd0c3-ngnhan2609-aaab.k.aivencloud.com:25979/defaultdb
     command: airflow scheduler
     depends_on:
       - postgres
